@@ -1,0 +1,1 @@
+Delete all lines and save only this one
