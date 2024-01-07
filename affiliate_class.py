@@ -31,5 +31,4 @@ class Affiliate_shop():
 purchase_1 = Affiliate_shop("Abibas", "Anastasia", "T-short", "AED", 500, "card", "cash")
 purchase_1.description()
 
-payment_method_purchases = Affiliate_shop("card", "cash")
-payment_method_purchases.payment_method()
+purchase_1.payment_method()
