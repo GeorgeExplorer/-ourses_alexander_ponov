@@ -1,13 +1,13 @@
 class Affiliate_shop():
 
-    def __init__(self, merchant, customer, items, currency, amount, card, cash):
-        self.merchant = merchant
-        self.customer = customer
-        self.amount = amount
-        self.clothes = items
-        self.currency = currency
-        self.card = card
-        self.cash = cash
+    def __init__(self):
+        self.customer = input("Enter your name: ")
+        self.merchant = input("Enter your merchant: ")
+        self.clothes = input("Enter the name of item you took: ")
+        self.amount = input("Enter amount of your order: ")
+        self.currency = "AED"
+        self.card = "card"
+        self.cash = "cash"
 
     def description(self):
         purchase_description = \
@@ -21,14 +21,25 @@ class Affiliate_shop():
         # return purchase_description
 
     def payment_method(self):
-        choose_payment_method = input(f"How would you like to pay here: {self.cash} or {self.card}? ")
-        if choose_payment_method.lower() == self.cash:
-            print(f"Your payment method is {self.cash}")
-        else:
-            print(f"Your payment method is {self.card}")
+        define_payment_method = False
+        while not define_payment_method:
+            choose_payment_method = input(f"How would you like to pay here: {self.cash} or {self.card}? ")
+            if choose_payment_method.lower() == self.cash:
+                define_payment_method == True
+                print(f"Your payment method is {self.cash}")
+                break
+            elif choose_payment_method.lower() == self.card:
+                define_payment_method == True
+                print(f"Your payment method is {self.card}")
+                break
+            else:
+                define_payment_method == False
+                print(f"We couldn't define the payment method! Please, try again!")
 
 
-purchase_1 = Affiliate_shop("Abibas", "Anastasia", "T-short", "AED", 500, "card", "cash")
+purchase_1 = Affiliate_shop()
+
 purchase_1.description()
+
 
 purchase_1.payment_method()
